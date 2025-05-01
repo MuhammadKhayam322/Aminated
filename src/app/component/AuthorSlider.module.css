@@ -1,0 +1,85 @@
+/* AuthorSlider.module.css */
+
+.slider {
+    position: relative;
+    max-width: 1700px; /* Customizable */
+    margin: auto;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.slide {
+    min-width: calc(100% / 4); /* Each card takes 25% of the slider */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.controlButton {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    outline: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.controlButton:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 1rem 0;
+  }
+  
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide {
+    flex-shrink: 0;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+  }
+  
+  .controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 1rem;
+  }
+  
+  .controlButton {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    padding: 0.2rem 0.6rem;
+  }
+  
