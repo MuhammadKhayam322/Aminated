@@ -9,7 +9,7 @@ interface TrainingCardProps {
 
 const TrainingCard: React.FC<TrainingCardProps> = ({ imageSrc, title,title2, description }) => {
   return (
-    <div className="w-120 mt-350 mb-20 h-48 bg-white  justify-center items-center border-2 border-gray-300 rounded-lg shadow-lg">
+    <div className="w-120 mb-20 h-48 bg-white  justify-center items-center border-2 border-gray-300 rounded-lg shadow-lg">
       <Image
         src={imageSrc}
         alt={title}

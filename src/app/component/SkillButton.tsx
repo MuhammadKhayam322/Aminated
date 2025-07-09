@@ -22,8 +22,8 @@ const SkillButton: React.FC<SkillButtonProps> = ({ label, animationType = 'fade'
       className="w-full bg-black text-white border border-white rounded-sm px-4 py-4"
       style={{
         fontFamily: 'Comic Sans MS',
-        perspective: '1000px',
-        transformStyle: 'preserve-3d',
+       
+     
       }}
     >
       <motion.h1

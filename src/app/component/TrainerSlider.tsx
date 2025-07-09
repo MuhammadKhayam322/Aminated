@@ -37,7 +37,7 @@ const TrainerSlider = () => {
                             name={author.name}
                             btn={author.btn}
                             description={author.description}
-                            className="top-20 left-4 md:left-20"
+                            className=" left-4 md:left-20"
                         />
                     </div>
                 ))}

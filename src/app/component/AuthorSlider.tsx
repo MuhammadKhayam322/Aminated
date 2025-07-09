@@ -3,8 +3,28 @@ import { useState } from 'react';
 import AuthorCard from './AuthorCard';
 import styles from './AuthorSlider.module.css';
 
+interface Post {
+    userId: number;
+    id: number;
+    title: string;
+    body: string;
+  }
+
 const AuthorSlider = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [apiData, setApiData] = useState<  Post[]>([]);
+
+
+    const fetchData = async () => {
+        try {   
+            const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+            const data = await response.json();
+            setApiData(data);
+        }
+        catch (error) { 
+            console.error('Error fetching data:', error);
+        }
+    };
     const authors = [
         { imageSrc: '/cardimg1.png', name: 'Daniel H. Pink', title: 'American writer', duration: '2 hours 58 minutes' },
         { imageSrc: '/cardimg2.png', name: 'Author Two', title: 'Writer', duration: '2 hours 30 minutes' },
