@@ -14,7 +14,7 @@ const AppHeader: React.FC = () => {
   const [showRegister, setShowRegister] = useState(false);
 
   return (
-    <nav className="bg-black px-4 py-4">
+    <nav className="bg-black px-4 py-4  text-white w-full top-0 left-0 z-50 shadow-lg">
       <div className="flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center">
@@ -127,9 +127,7 @@ const AppHeader: React.FC = () => {
 
         {/* Buttons */}
         <div className="flex flex-col lg:flex-row gap-4 mt-4 lg:mt-0 lg:ml-10 items-start lg:items-center text-black ">
-          <button className="border-2 border-white p-2 rounded-sm hover:bg-gray-700">
-            <Search size={20} className="text-white" />
-          </button>
+          
           <button
             onClick={() => setShowLogin(true)}
             className="border-2 border-white px-4 py-2 text-black bg-white rounded-sm hover:bg-gray-700 hover:text-black-100 w-full lg:w-auto"

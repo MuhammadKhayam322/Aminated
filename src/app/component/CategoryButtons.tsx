@@ -32,8 +32,8 @@ export default function CategoryButtons() {
       </div>
 
       {selectedCategory && (
-        <div className="mt-8 text-center bg-gray-100 p-6 rounded-lg max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-2">{selectedCategory.label}</h2>
+        <div className="mt-8 text-center bg-gray-100 p-6 rounded-lg max-w-3xl mx-auto ">
+          <h2 className="text-2xl font-bold mb-2 text-black">{selectedCategory.label}</h2>
           <p className="text-gray-700">{selectedCategory.description}</p>
         </div>
       )}

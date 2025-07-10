@@ -17,7 +17,7 @@ const TrainingCard: React.FC<TrainingCardProps> = ({ imageSrc, title,title2, des
         height={50}
         className="object-cover ml-5 mt-15 absolute" 
       />
-      <div className='ml-10 mt-10'>
+      <div className='ml-10 mt-10 text-black'>
        <h1 className="text-lg font-bold ml-25 w-60 mt-20">{title} </h1> 
        <h2 className="text-lg font-bold ml-25 w-60 mt-20">{title2} </h2>
        <p className="text-sm ml-25 mt-20 w-55">{description}</p>

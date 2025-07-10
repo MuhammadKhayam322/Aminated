@@ -29,7 +29,7 @@ const AuthorCard: React.FC<AuthorCardProps> = ({
           sizes="(max-width: 768px) 100vw, 300px"
         />
       </div>
-      <div className="p-4">
+      <div className="p-4 text-black">
         <h1 className="text-lg sm:text-xl font-bold">{name}</h1>
         <h3 className="text-sm sm:text-base font-semibold">{title}</h3>
         <h6 className="text-xs sm:text-sm text-gray-600">{duration}</h6>

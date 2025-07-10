@@ -10,8 +10,25 @@ import TrainerSlider from "./component/TrainerSlider";
 import React from "react";
 import Footer from "./component/Footer";
 import CategoryButtons from "./component/CategoryButtons";
-import ExplorePage from "./component/explore/page";
+import { useState } from "react";
+
+const skillDescriptions: { [key: string]: string } = {
+  "Professional Skills": "Improve your communication, leadership, and business skills.",
+  "Musician": "Learn to play instruments or produce professional music.",
+  "Become a Professional Tutor": "Teach students effectively online and offline.",
+  "Become a Great Musician": "Master your musical craft with industry experts.",
+  "Become": "Grow into your full potential in any field you choose.",
+  "Become a Chef": "Learn culinary arts and gourmet food preparation.",
+  "Designing Skills": "Master design thinking, UI/UX, and digital tools.",
+  "Others": "Explore new skills and paths not listed here."
+};
 export default function HomePage() {
+   const [selectedLabel, setSelectedLabel] = useState<string | null>(null);
+
+  const handleSkillClick = (label: string) => {
+    setSelectedLabel(label === selectedLabel ? null : label);
+  };
+
   return (
     <div className="bg-black text-white">
       {/* Hero Section */}
@@ -32,27 +49,38 @@ export default function HomePage() {
             Learn from the Best, Become Your Best
           </h1>
           <p className="text-lg md:text-xl mb-4 max-w-xl">
-            Start, switch, or advance your career with more than 5,800 courses, Professional Certificates, and degrees from world-class universities and companies.
+            Start, switch, or advance your career with more than 5,800 courses,
+            Professional Certificates, and degrees from world-class universities
+            and companies.
           </p>
           <hr className="w-48 border-white border-t-4 my-4" />
         </motion.div>
 
         {/* Skills Grid */}
         <div className="mt-12 w-full">
-          <h2 className="text-3xl font-bold">What brings you to Utopia today?</h2>
+          <h2 className="text-3xl font-bold">
+            What brings you to Utopia today?
+          </h2>
           <p className="text-xl mb-8">Choose as many as you want.</p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <SkillButton label="Professional Skills" animationType="slideLeft" />
-            <SkillButton label="Musician" animationType="flip" />
-            <SkillButton label="Become a Professional Tutor" animationType="zoom" />
-            <SkillButton label="Become a Great Musician" animationType="slideLeft" />
-            <SkillButton label="Become" animationType="flip" />
-            <SkillButton label="Become a Chef" animationType="zoom" />
-            <SkillButton label="Designing Skills" animationType="slideLeft" />
-            <SkillButton label="Designing Skills" animationType="flip" />
-            <SkillButton label="Others" animationType="zoom" />
+       <div className="bg-black text-white">
+      {/* ...Hero section... */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {Object.keys(skillDescriptions).map((label) => (
+          <div key={label}>
+            <SkillButton
+              label={label}
+              animationType="slideLeft"
+              onClick={() => handleSkillClick(label)}
+            />
+            {selectedLabel === label && (
+              <p className="mt-2 text-sm text-gray-300">{skillDescriptions[label]}</p>
+            )}
           </div>
+        ))}
+      </div>
+      {/* ...rest of your code (CTA, sliders, cards, footer)... */}
+    </div>
 
           {/* Overlay Image */}
           <div className="mt-8 flex justify-center">
@@ -68,20 +96,22 @@ export default function HomePage() {
               className="text-4xl font-bold mb-4"
             >
               Start your journey today.
-            </motion.h1 >
+            </motion.h1>
             <div className="text-white">
-           <motion.div
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 0.8, duration: 0.8 }}
-  className="flex flex-col items-center"
->
-  <Link href="/component/explore">
-    <button className="bg-black px-6 py-3 rounded-lg transition-colors duration-300 hover:bg-gray-800">
-      <span className="text-white font-semibold">Explore Classes</span>
-    </button>
-  </Link>
-</motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8, duration: 0.8 }}
+                className="flex flex-col items-center"
+              >
+                <Link href="/component/explore">
+                  <button className="bg-black px-6 py-3 rounded-lg transition-colors duration-300 hover:bg-gray-800">
+                    <span className="text-white font-semibold">
+                      Explore Classes
+                    </span>
+                  </button>
+                </Link>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -136,7 +166,9 @@ export default function HomePage() {
             <Image src="/clm.png" alt="Card" layout="fill" objectFit="cover" />
             <div className="absolute inset-0 p-4 text-white flex flex-col justify-end">
               <Image src="/heart.png" alt="Heart" width={40} height={40} />
-              <h3 className="text-3xl font-bold mt-4">Climate Change: Cause and Solution</h3>
+              <h3 className="text-3xl font-bold mt-4">
+                Climate Change: Cause and Solution
+              </h3>
               <p className="text-2xl mt-2">$40.90</p>
             </div>
           </div>
@@ -145,34 +177,61 @@ export default function HomePage() {
             <Image src="/clm2.png" alt="Card" layout="fill" objectFit="cover" />
             <div className="absolute inset-0 p-4 text-white flex flex-col justify-end">
               <Image src="/heart.png" alt="Heart" width={40} height={40} />
-              <h3 className="text-3xl font-bold mt-4">Climate Change: Cause and Solution</h3>
+              <h3 className="text-3xl font-bold mt-4">
+                Climate Change: Cause and Solution
+              </h3>
               <p className="text-2xl mt-2">$40.90</p>
             </div>
           </div>
         </div>
         <div className="flex justify-center mt-10">
-          <button className="border px-6 py-2 rounded-lg">Show More</button>
+          <div className="flex justify-center mt-10">
+  <Link href="/component/landing">
+    <button className="border px-6 py-2 rounded cursor-pointer hover:bg-white hover:text-black transition">
+      Show More
+    </button>
+  </Link>
+</div>
+
         </div>
       </section>
 
       {/* Footer */}
       <Footer
-        logo="/logo.svg"
         columns={[
           {
             title: "Categories",
             items: [
-              "Competency Development", "Entrepreneurship", "Life Culture",
-              "Gastronomy", "Sustainability", "Leadership", "Marketing",
-              "Finance", "Health", "History", "Music", "Sales", "Science", "Cinema", "Art"
-            ]
+              "Competency Development",
+              "Entrepreneurship",
+              "Life Culture",
+              "Gastronomy",
+              "Sustainability",
+              "Leadership",
+              "Marketing",
+              "Finance",
+              "Health",
+              "History",
+              "Music",
+              "Sales",
+              "Science",
+              "Cinema",
+              "Art",
+            ],
           },
           {
             title: "Instructors",
             items: [
-              "Ergin Atman", "Prof. MThew Swith", "Prof. Cshew", "Argun Mehta",
-              "Asaf Savas", "Mario", "Azgur Ali", "Ounce Methab", "Egin"
-            ]
+              "Ergin Atman",
+              "Prof. MThew Swith",
+              "Prof. Cshew",
+              "Argun Mehta",
+              "Asaf Savas",
+              "Mario",
+              "Azgur Ali",
+              "Ounce Methab",
+              "Egin",
+            ],
           },
         ]}
         aboutUs={["Support", "FAQ", "About Utopia", "Our Founders"]}

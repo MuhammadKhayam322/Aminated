@@ -1,44 +1,10 @@
+// SkillButton.tsx
+
+"use client";
 import React from 'react';
 import { motion } from 'framer-motion';
 
-type SkillButtonProps = {
-  label: string;
-  animationType?: 'fade' | 'slideLeft' | 'slideRight' | 'zoom' | 'flip';
-};
-
-const SkillButton: React.FC<SkillButtonProps> = ({ label, animationType = 'fade' }) => {
-  const { initial, animate, transition } = getAnimation(animationType);
-
-  return (
-    <motion.button
-      initial={initial}
-      animate={animate}
-      transition={transition}
-      whileHover={{
-        scale: 1.05,
-        borderColor: '#FFD700',
-      }}
-      whileTap={{ scale: 0.95 }}
-      className="w-full bg-black text-white border border-white rounded-sm px-4 py-4"
-      style={{
-        fontFamily: 'Comic Sans MS',
-       
-     
-      }}
-    >
-      <motion.h1
-        whileHover={{ fontSize: '1.rem' }}
-        transition={{ duration: 0.3 }}
-        className="text-white"
-      >
-        {label}
-      </motion.h1>
-    </motion.button>
-  );
-};
-
-export default SkillButton;
-
+// ✅ Fix: Define it BEFORE using it
 function getAnimation(type: string) {
   switch (type) {
     case 'slideLeft':
@@ -73,6 +39,44 @@ function getAnimation(type: string) {
       };
   }
 }
+
+// 👇 Component that uses getAnimation
+type SkillButtonProps = {
+  label: string;
+  animationType?: 'fade' | 'slideLeft' | 'slideRight' | 'zoom' | 'flip';
+  onClick?: () => void;
+};
+
+const SkillButton: React.FC<SkillButtonProps> = ({ label, animationType = 'fade', onClick }) => {
+  const { initial, animate, transition } = getAnimation(animationType);
+
+  return (
+    <motion.button
+      initial={initial}
+      animate={animate}
+      transition={transition}
+      onClick={onClick}
+      whileHover={{ scale: 1.05, borderColor: '#FFD700' }}
+      whileTap={{ scale: 0.95 }}
+      className="w-full bg-black text-white border border-white rounded-sm px-4 py-4"
+      style={{ fontFamily: 'Comic Sans MS' }}
+    >
+      <motion.h1
+       
+        transition={{ duration: 0.3 }}
+        className="text-white"
+      >
+        {label}
+      </motion.h1>
+    </motion.button>
+  );
+};
+
+export default SkillButton;
+
+
+// keep getAnimation function as-is...
+
 
 
 

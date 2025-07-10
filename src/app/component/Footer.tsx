@@ -58,9 +58,9 @@ const Footer: React.FC<FooterProps> = ({ logo, columns, aboutUs, bottomLinks }) 
 
         {/* Social Icons */}
         <div className="flex gap-3 text-xl">
-          <a href="#" className="text-pink-500"><FaInstagram /></a>
-          <a href="#" className="text-blue-600"><FaFacebookF /></a>
-          <a href="#" className="text-blue-500"><FaLinkedinIn /></a>
+          <a href="https://www.instagram.com/" className="text-pink-500"><FaInstagram /></a>
+          <a href="https://www.facebook.com/" className="text-blue-600"><FaFacebookF /></a>
+          <a href="https://www.linkedin.com/" className="text-blue-500"><FaLinkedinIn /></a>
         </div>
       </div>
     </footer>
