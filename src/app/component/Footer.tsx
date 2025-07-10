@@ -1,6 +1,7 @@
 import React from "react";
 import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
-
+import Image from "next/image";
+import Link from "next/link";
 interface FooterColumn {
   title?: string;
   items: string[];
@@ -19,7 +20,7 @@ const Footer: React.FC<FooterProps> = ({ logo, columns, aboutUs, bottomLinks }) 
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10">
         {/* Logo */}
         <div className="col-span-1 flex flex-col gap-4">
-          {logo && <img src={logo} alt="Logo" className="w-16" />}
+          {logo && <Image src={logo} alt="Logo" className="w-16" />}
           <p className="text-sm text-white/80">Utopia</p>
         </div>
 
@@ -58,9 +59,9 @@ const Footer: React.FC<FooterProps> = ({ logo, columns, aboutUs, bottomLinks }) 
 
         {/* Social Icons */}
         <div className="flex gap-3 text-xl">
-          <a href="https://www.instagram.com/" className="text-pink-500"><FaInstagram /></a>
-          <a href="https://www.facebook.com/" className="text-blue-600"><FaFacebookF /></a>
-          <a href="https://www.linkedin.com/" className="text-blue-500"><FaLinkedinIn /></a>
+          <Link href="https://www.instagram.com/" className="text-pink-500"><FaInstagram /></Link>
+          <Link href="https://www.facebook.com/" className="text-blue-600"><FaFacebookF /></Link>
+          <Link href="https://www.linkedin.com/" className="text-blue-500"><FaLinkedinIn /></Link>
         </div>
       </div>
     </footer>
