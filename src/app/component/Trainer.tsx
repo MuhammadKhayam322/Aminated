@@ -14,7 +14,7 @@ const Trainer: React.FC<AuthorCardProps> = ({
   name,
  btn,
   description,
-  className = "t",
+ 
 }) => {
   return (
     <div

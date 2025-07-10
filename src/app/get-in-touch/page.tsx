@@ -1,3 +1,5 @@
+import { Link } from "lucide-react";
+
 export default function GetInTouchPage() {
   return (
     <div className="min-h-screen bg-white text-gray-900">
@@ -53,21 +55,21 @@ export default function GetInTouchPage() {
         <h3 className="text-lg sm:text-xl font-semibold mb-2">Prefer Email?</h3>
         <p className="text-gray-700">
           You can also reach us directly at{" "}
-          <a
+          <Link
             href="mailto:projects@example.com"
             className="text-indigo-600 underline hover:text-indigo-800"
           >
             projects@example.com
-          </a>
+          </Link>
         </p>
 
         <div className="mt-6">
-          <a
+          <Link
             href="/"
             className="inline-block bg-white text-rose-600 font-semibold px-6 py-3 rounded hover:bg-gray-200 transition duration-300"
           >
             Back to Home
-          </a>
+          </Link>
         </div>
       </section>
     </div>

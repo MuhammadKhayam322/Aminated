@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function MobileAppsPage() {
   return (
     <div className="min-h-screen bg-white text-gray-800">
@@ -51,19 +53,19 @@ export default function MobileAppsPage() {
       <section className="py-12 bg-gray-900 text-white text-center">
         <h2 className="text-2xl sm:text-3xl font-bold mb-4">Ready to launch your app?</h2>
         <p className="mb-6">Let’s build something amazing together. Get in touch with our mobile team today.</p>
-        <a
+        <Link
           href="/get-in-touch"
           className="inline-block bg-white text-gray-900 px-6 py-3 rounded font-semibold hover:bg-gray-200 transition"
         >
           Get in Touch
-        </a>
+        </Link>
         <div className="mt-4">
-        <a
+        <Link
           href="/"
           className="inline-block bg-white text-gray-900 px-6 py-3 rounded font-semibold hover:bg-gray-200 transition"
         >
           Back to Home
-        </a>
+        </Link>
         </div>
       </section>
     </div>

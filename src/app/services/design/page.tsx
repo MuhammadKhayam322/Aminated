@@ -1,3 +1,7 @@
+"use client";
+
+import Link from "next/link";
+
 export default function DesignPage() {
   return (
     <div className="min-h-screen bg-white text-gray-900">
@@ -77,24 +81,23 @@ export default function DesignPage() {
       <section className="bg-rose-600 py-16 text-white text-center px-6">
         <h2 className="text-2xl sm:text-3xl font-bold mb-4">Need a Stunning Design?</h2>
         <p className="mb-6">
-          Let's turn your idea into a product your users will love.
+          Let&apos;s turn your idea into a product your users will love.
         </p>
-        <a
-          href="/get-in-touch"
-          className="inline-block bg-white text-rose-600 font-semibold px-6 py-3 rounded hover:bg-gray-100 transition"
-        >
-          Get in Touch
-        </a>
+        <Link href="/get-in-touch">
+          <span className="inline-block bg-white text-rose-600 font-semibold px-6 py-3 rounded hover:bg-gray-100 transition">
+            Get in Touch
+          </span>
+        </Link>
         <div className="mt-4">
-         <a
-          href="/"
-          className="inline-block bg-white text-rose-600 font-semibold px-6 py-3 rounded hover:bg-gray-100 transition"
-        >
-          Back to Home
-        </a>
+          <Link href="/">
+            <span className="inline-block bg-white text-rose-600 font-semibold px-6 py-3 rounded hover:bg-gray-100 transition">
+              Back to Home
+            </span>
+          </Link>
         </div>
       </section>
     </div>
   );
 }
+
 

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function WebDevPage() {
   return (
     <div className="min-h-screen bg-white text-gray-900">
@@ -93,19 +95,19 @@ export default function WebDevPage() {
           Let our expert web developers bring your vision to life.
         </p>
           <div className="gap-4">
-        <a
+        <Link
           href="/contact"
           className="inline-block bg-white text-indigo-700 font-semibold px-6 py-3 rounded hover:bg-gray-200 transition"
         >
           Contact
-        </a>
+        </Link>
          <div className="mt-4">
-          <a
+          <Link
             href="/"
             className="inline-block bg-white text-indigo-700 font-semibold px-6 py-3 rounded hover:bg-gray-200 transition"
           >
             Back to Home
-          </a>
+          </Link>
           </div>
         </div>
       </section>

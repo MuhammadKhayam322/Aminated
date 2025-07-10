@@ -1,3 +1,5 @@
+
+import Link from "next/link";
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white text-gray-900">
@@ -86,16 +88,15 @@ export default function ContactPage() {
 
           {/* Back to Home Button */}
           <div className="flex justify-center mt-12">
-            <a
+            <Link
               href="/"
               className="inline-block bg-white text-rose-600 font-semibold px-6 py-3 rounded border border-rose-600 hover:bg-rose-50 transition"
             >
               Back to Home
-            </a>
+            </Link>
           </div>
         </div>
       </section>
     </div>
   );
 }
-
